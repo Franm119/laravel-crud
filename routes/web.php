@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**
+ * Sección de rutas para CRUD (create, read, update, delete).
+ */
+Route::resource('personal', 'Personal\PersonalController');
