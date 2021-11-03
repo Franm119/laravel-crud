@@ -13,6 +13,9 @@
     </head>
     <body>
         <div id="app" class="d-flex flex-column h-screen justify-content-between">
+            <header>
+                @include('personal.fragment.nav')
+            </header>
             <main>
                 @yield('content')
             </main>
