@@ -67,6 +67,28 @@ class PersonalController extends Controller
         return redirect()->route('personal.show', $id);
     }
 
+    /**
+     * Por medio del modelo se realiza una descripción de un registro en especifico.
+     *
+     * @param  mixed $id
+     * @return void
+     */
+    public function show($id){
+        $personal = Personal::find($id);
+        return view('personal.show', compact('personal'));
+    }
+
+    /**
+     * Elimina un registro..
+     *
+     * @param  mixed $id
+     * @return void
+     */
+    public function destroy($id){
+        $personal = Personal::find($id);
+        $personal ->delete();
+        return back()->with('info', 'Eliminado exitosamente..!!!');
+    }
     
     
 }
