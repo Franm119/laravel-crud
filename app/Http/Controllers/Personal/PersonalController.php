@@ -38,5 +38,35 @@ class PersonalController extends Controller
         Personal::create($request->validated());
         return redirect()->route('personal.index');
     }
+
+    /**
+     * Muestra una vista que recolecta los datos para actualizar un registro.
+     *
+     * @param  mixed $id
+     * @return void
+     */
+    public function edit($id){
+        $personal = Personal::find($id);
+        return view('personal.edit', compact('personal'));
+    }
+
+    /**
+     * Se actualiza un registro existente y lo modifica, los datos provienen del método edit.
+     *
+     * @param  mixed $request
+     * @param  mixed $id
+     * @return void
+     */
+    public function update(PersonalRequest $request, $id){
+        $personal = Personal::find($id);
+        $personal -> names     = $request -> names;
+        $personal -> last_name = $request -> last_name;
+        $personal -> sex       = $request -> sex;
+        $personal -> birthday  = $request -> birthday;
+        $personal -> save();
+        return redirect()->route('personal.show', $id);
+    }
+
+    
     
 }
