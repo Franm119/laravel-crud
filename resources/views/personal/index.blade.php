@@ -8,7 +8,7 @@
             <div class="col-12 col-sm-10 col-lg-6 col-lg-8 mx-auto py-3">
                 <div class="row align-items-start d-flex align-items-center">
                     <div class="p-1"><h1 class="mb-0">@lang('Lista de personal')</h1></div>
-                    <div class="ml-auto p-1"><a class="btn btn-outline-success" href="#">Create</a></div>
+                    <div class="ml-auto p-1"><a class="btn btn-outline-success" href="{{ route('personal.create') }}">Create</a></div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="table-responsive">
