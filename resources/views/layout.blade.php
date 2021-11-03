@@ -19,6 +19,7 @@
             <main>
                 @yield('content')
             </main>
+            @include('personal.fragment.footer')
         </div>
     </body>
 </html>
